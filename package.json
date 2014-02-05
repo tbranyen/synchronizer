@@ -1,0 +1,12 @@
+{
+  "name": "synchronizer",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Tim Branyen",
+  "license": "MIT",
+  "dependencies": {
+    "transmoglify-amd": "git://github.com/jugglinmike/amdclean.git#better-namespacing",
+    "lodash": "~2.4.1"
+  }
+}
