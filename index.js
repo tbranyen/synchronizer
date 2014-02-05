@@ -1,7 +1,7 @@
 var path = require("path");
 var fs = require("fs");
 var _ = require("lodash");
-var transmoglify = require("amdclean");
+var transmoglify = require("transmoglify-amd");
 
 var fragPath = path.join(__dirname, "fragments");
 
@@ -32,6 +32,10 @@ exports.optimize = function(name, config, source) {
   // This runs once.
   onBuildStart(name, config);
 
+  // Build out the AST from the source.  Reuse the existing context each time
+  // to remain consistent.
   var ast = transmoglify.clean(source, config.context);
+
+  // Return the string contents of the modified source file.
   return ast.toString();
 };
