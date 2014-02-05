@@ -12,7 +12,7 @@ var onBuildStart = _.once(function(name, config) {
 
   // Prime the context with the shim configuration.
   Object.keys(shimConfiguration || {}).forEach(function(key) {
-    context.register(key, "window['" + shimConfiguration[key].exports + "']");
+    context.register(key, shimConfiguration[key].exports, "window");
   });
 
   var startFrag = String(fs.readFileSync(path.join(fragPath, "start.frag")));
