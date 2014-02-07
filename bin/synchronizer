@@ -1,0 +1,23 @@
+#!/bin/env node
+
+const minimist = require("minimist");
+const lib = require("../lib/index");
+
+
+var argv = require('minimist')(process.argv.slice(2));
+var fileName = argv._[0];
+
+if (!fileName) {
+  console.error("No file specified.");
+  return process.exit(1);
+}
+
+// If a config was specified load it up.
+if (argv.config) {
+  
+}
+
+var config = argv.config ? require(argv.config) : null;
+var output = lib.optimize(fileName, config);
+
+console.log(output);
