@@ -1,10 +1,10 @@
 #!/bin/env node
 
 const minimist = require("minimist");
+const path = require("path");
 const lib = require("../lib/index");
 
-
-var argv = require('minimist')(process.argv.slice(2));
+var argv = minimist(process.argv.slice(2));
 var fileName = argv._[0];
 
 if (!fileName) {
@@ -12,12 +12,11 @@ if (!fileName) {
   return process.exit(1);
 }
 
-// If a config was specified load it up.
-if (argv.config) {
-  
-}
+// Handle configurations.
+var config = argv.config ? require(path.join(process.cwd(), argv.config)) : {};
+config.name = argv.name ? argv.name : config.name;
 
-var config = argv.config ? require(argv.config) : null;
+// Optimize the source.
 var output = lib.optimize(fileName, config);
 
 console.log(output);

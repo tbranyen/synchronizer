@@ -1,2 +1,2 @@
-  return <%= name %>;
+  return <%= context.lookup(moduleName) %>;
 }));

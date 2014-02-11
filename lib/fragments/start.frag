@@ -22,4 +22,5 @@
 }(typeof global === "object" ? global : this, function(<%= deps %>) {
   "use strict";
 
+  // The exports object that contains all modules.
   var <%= name %> = {};
