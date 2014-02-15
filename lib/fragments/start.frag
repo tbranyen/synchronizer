@@ -24,3 +24,6 @@
 
   // The exports object that contains all modules.
   var <%= name %> = {};
+
+  // Set window to always equal the global object.
+  var window = this;

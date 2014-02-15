@@ -16,6 +16,9 @@ if (!fileName) {
 var config = argv.config ? require(path.join(process.cwd(), argv.config)) : {};
 config.name = argv.name ? argv.name : config.name;
 
+// 
+// USE __PROTO__ HERE FOR OPTIONS
+
 // Optimize the source.
 var output = lib.optimize(fileName, config);
 
