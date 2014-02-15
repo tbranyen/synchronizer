@@ -15,6 +15,10 @@
     "synchronizer": "bin/synchronizer"
   },
   "scripts": {
-    "synchronizer": "bin/synchronizer"
+    "synchronizer": "bin/synchronizer",
+    "test": "mocha --ui tdd"
+  },
+  "devDependencies": {
+    "mocha": "~1.17.1"
   }
 }
