@@ -6,7 +6,7 @@
   "author": "Tim Branyen",
   "license": "MIT",
   "dependencies": {
-    "transmoglify-amd": "git://github.com/jugglinmike/amdclean.git",
+    "transmogrify-amd": "git://github.com/jugglinmike/transmogrify-amd.git",
     "lodash": "~2.4.1",
     "minimist": "0.0.5",
     "falafel": "~0.3.1"
