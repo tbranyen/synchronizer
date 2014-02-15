@@ -1,3 +1,3 @@
-require(["b", "c"], function(b) {
-  console.log(b.msg);
+require(["b", "c"], function(b, c) {
+  global.things = [b, c];
 });
