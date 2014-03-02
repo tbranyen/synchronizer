@@ -23,7 +23,18 @@
   "use strict";
 
   // The exports object that contains all modules.
-  var <%= name %> = {};
+  var <%= exports %> = {};
 
   // Set window to always equal the global object.
   var window = this;
+
+  // Check for existence of `define` in the global scope.
+  var hadDefine = "define" in window;
+  // Save the original value of `define`.
+  var oldDefine = window.define;
+
+  // Mock the define call.
+  window.define = function() {};
+
+  // Ensure it's AMD.
+  window.define.amd = {};
