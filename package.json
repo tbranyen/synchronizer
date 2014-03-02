@@ -1,25 +1,31 @@
 {
   "name": "synchronizer",
   "version": "0.0.0",
-  "description": "",
+  "description": "Build AMD projects into a single UMD file.",
   "main": "lib",
-  "author": "Tim Branyen",
-  "license": "MIT",
+  "license": "MIT-Expat",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "ci": "npm run test && npm run lint",
+    "test": "mocha --reporter spec --ui tdd test/*.js",
+    "lint": "jshint lib/ test/*.js",
+    "doc": "jsdoc -r -d docs/ lib/",
+    "synchronizer": "bin/synchronizer"
+  },
   "dependencies": {
     "transmogrify-amd": "git://github.com/jugglinmike/transmogrify-amd.git",
     "lodash": "~2.4.1",
     "minimist": "0.0.5",
     "falafel": "~0.3.1"
   },
-  "bin": {
-    "synchronizer": "bin/synchronizer"
-  },
-  "scripts": {
-    "synchronizer": "bin/synchronizer",
-    "test": "mocha --ui tdd"
-  },
   "devDependencies": {
     "mocha": "~1.17.1",
-    "chai": "~1.9.0"
+    "chai": "~1.9.0",
+    "jsdoc": "~3.3.0-alpha4"
+  },
+  "bin": {
+    "synchronizer": "bin/synchronizer"
   }
 }
